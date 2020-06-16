@@ -1,4 +1,4 @@
-package co.edu.escuelaing.arsw.tallernet.sockets;
+package co.edu.escuelaing.arsw.tallernet.Thread;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,6 +12,7 @@ public class WebClient extends Thread {
     BufferedReader in;
     Socket clientSocket;
     int session;
+    
     public WebClient(Socket clientSocket,int session) {
         this.clientSocket=clientSocket;
         this.session=session;
@@ -86,9 +87,9 @@ public class WebClient extends Thread {
                 out.println(outputLine);
                 out.close();
                 in.close();
-                clientSocket.close();
+                
             }
-
+        clientSocket.close();
         } catch (IOException e) {
             System.err.println("Accept failed.");
             System.exit(1);

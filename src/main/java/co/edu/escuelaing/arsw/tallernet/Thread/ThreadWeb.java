@@ -1,4 +1,4 @@
-package co.edu.escuelaing.arsw.tallernet.sockets;
+package co.edu.escuelaing.arsw.tallernet.Thread;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,12 +6,14 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class ThreadWeb extends Thread {
+public class ThreadWeb implements Runnable {
 
     PrintWriter out;
     BufferedReader in;
     Socket clientSocket;
     int session;
+    
+    
     public ThreadWeb(Socket clientSocket, int session) {
         this.clientSocket=clientSocket;
         this.session=session;
@@ -22,7 +24,6 @@ public class ThreadWeb extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
     @Override
     public void run() {
@@ -86,9 +87,9 @@ public class ThreadWeb extends Thread {
                 out.println(outputLine);
                 out.close();
                 in.close();
-                clientSocket.close();
+                
             }
-
+        clientSocket.close();
         } catch (IOException e) {
             System.err.println("Accept failed.");
             System.exit(1);
