@@ -30,7 +30,7 @@ $ mvn package
 el modelo es algo simple de primera impresion, depende del servidor y el cliente web, este servidor es un servidor concurrente para atender varios procesos o solicitudes al mismo tiempo
     
     
-#pruebas 
+# Pruebas 
   
  la siguiente imagen refleja a nivel general el funcionamiento de los socket en este caso con el servidor que atiende funciones matematicas.
 
