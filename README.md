@@ -13,7 +13,7 @@ se muestran mediante ejemplos en los cuales puede hacer la solcitud mediante un 
 
 ## Installation
  ```sh
-$ git clone https://github.com/danielGomez1703/ARSW-Lab4
+$ git clone https://github.com/danielGomez1703/ARSW-Lab4-
 $ cd ARSW-Lab4
 $ mvn package
 ```
@@ -25,7 +25,7 @@ $ mvn package
     
     
 ## Modelo
-![Modelo](https://github.com/danielGomez1703/ARSW-Lab4/blob/master/resources/Umodel.JPG)
+![Modelo](https://github.com/danielGomez1703/ARSW-Lab4-/blob/master/resources/Umodel.JPG)
 
 el modelo es algo simple de primera impresion, depende del servidor y el cliente web, este servidor es un servidor concurrente para atender varios procesos o solicitudes al mismo tiempo
     
@@ -34,7 +34,7 @@ el modelo es algo simple de primera impresion, depende del servidor y el cliente
   
  la siguiente imagen refleja a nivel general el funcionamiento de los socket en este caso con el servidor que atiende funciones matematicas.
 
-![pruebaM](https://github.com/danielGomez1703/ARSW-Lab4/blob/master/resources/pMath.JPG)
+![pruebaM](https://github.com/danielGomez1703/ARSW-Lab4-/blob/master/resources/pMath.JPG)
 
 ## Descripion
 
