@@ -30,7 +30,7 @@ $ mvn package
 
    para este caso usamos el puerto 35000, esto esta configurado por defecto el codigo
 ## Modelo
-![Modelo](https://github.com/danielGomez1703/ARSW-Lab4-/blob/master/resources/modelo.PNG)
+![Modelo](https://github.com/danielGomez1703/ARSW-Lab4-/blob/master/resources/Modelo.PNG)
 
 el modelo es algo simple de primera impresion, depende del servidor y el cliente web, este servidor es un servidor concurrente para atender varios procesos o solicitudes al mismo tiempo
     
@@ -60,11 +60,11 @@ las preubas se haran con llamados desde clientes , mediante una peticion GET.
 
 ## DOCUMENTACION
 
-    la documentacion se encuentra adjunta en el repositorio 
-    [aqui encontrara la documentacion](https://github.com/danielGomez1703/ARSW-Lab4-/tree/master/site/apidocs)
+la documentacion se encuentra adjunta en el repositorio 
+[aqui encontrara la documentacion](https://github.com/danielGomez1703/ARSW-Lab4-/tree/master/site/apidocs)
 
 ## Author
-    Daniel Felipe Gomez Suarez -[daniegomez1703](https://github.com/danielGomez1703)
+    Daniel Felipe Gomez Suarez - [daniegomez1703](https://github.com/danielGomez1703)
     
 ## BUILT IN
    Proyecto construido en [Maven](https://maven.apache.org/)
