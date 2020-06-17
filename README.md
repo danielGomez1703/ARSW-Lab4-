@@ -64,7 +64,7 @@ la documentacion se encuentra adjunta en el repositorio
 [aqui encontrara la documentacion](https://github.com/danielGomez1703/ARSW-Lab4-/tree/master/site/apidocs)
 
 ## Author
-   Daniel Felipe Gomez Suarez - [daniegomez1703](https://github.com/danielGomez1703)
+   Daniel Felipe Gomez Suarez - [danielgomez1703](https://github.com/danielGomez1703)
     
 ## BUILT IN
    Proyecto construido en [Maven](https://maven.apache.org/)
