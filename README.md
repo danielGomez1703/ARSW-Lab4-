@@ -29,13 +29,18 @@ $ mvn package
  
 
    para este caso usamos el puerto 35000, esto esta configurado por defecto el codigo
-## Modelo
+## MODELO
 ![Modelo](https://github.com/danielGomez1703/ARSW-Lab4-/blob/master/resources/Modelo.PNG)
+
+
+Las clases que implementan la interfaz **Runnable** son los clientes, esto para que puedan ejecutarse de forma simultaniea y puedan ser agregados al **pool** que se encuentra dentro del **HTTPserver** alli es donde se le da la instruccion a cada socket, donde se acepta mediante el metodo del **ServerSocket** el cual permite aceptar el socket que realiza la solicitud **Accept()** 
+
+Adicionalmente tiene una clase **Encoder** la cual hace la verificacion del tipo de solcitud entrante. en caso de ser imagen devolvera la cadena correspondiente para hacer el **Response**, esto tambien para una pagina o subdirectorio del servidor.
 
 el modelo es algo simple de primera impresion, depende del servidor y el cliente web, este servidor es un servidor concurrente para atender varios procesos o solicitudes al mismo tiempo
     
     
-# Pruebas 
+# PRUEBAS
   
 Esta evidencia es  la prueba al ejecutar una solicitud, la capacidad de crear 100 mas de acuerdo al pool establecido.
 
