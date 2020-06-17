@@ -1,21 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package co.edu.escuelaing.arsw.tallernet.Thread;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.MalformedURLException;
 import java.net.Socket;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class WebClient extends Thread {
+/**
+ *
+ * @author danip
+ */
+public class ClienteWeb implements Runnable {
 
-    PrintWriter out;
-    BufferedReader in;
-    Socket clientSocket;
-    int session;
-    
-    public WebClient(Socket clientSocket,int session) {
-        this.clientSocket=clientSocket;
-        this.session=session;
+    private final Socket clientSocket;
+    private final int session;
+    private PrintWriter out;
+    private BufferedReader in;
+/**
+ * creador del cliente web el cual procedera a ahcer la solciitud de la url
+ * @param clientSocket
+ * @param session 
+ */
+    public ClienteWeb(Socket clientSocket, int session) {
+        this.clientSocket = clientSocket;
+        this.session = session;
         try {
             out = new PrintWriter(clientSocket.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -23,15 +41,24 @@ public class WebClient extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
+/**
+ * este metodo inicia el proceso del cliente en su creacion
+ */
     @Override
     public void run() {
+        URL url = null;
+        URLConnection con;
         try {
+            url = new URL("http://localhost:35000/prueba2.html");
+            con = url.openConnection();
+            in = new BufferedReader(new InputStreamReader(con.getInputStream()));
             boolean flag = true;
             String inputLine, outputLine;
             String[] recursos = {};
+            
             while ((inputLine = in.readLine()) != null) {
+                
                 if (flag) {
                     recursos = inputLine.split(" ");
                     flag = false;
@@ -87,13 +114,17 @@ public class WebClient extends Thread {
                 out.println(outputLine);
                 out.close();
                 in.close();
-                
+
             }
-        clientSocket.close();
-        } catch (IOException e) {
-            System.err.println("Accept failed.");
-            System.exit(1);
+            clientSocket.close();
+
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(ClienteWeb.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ClienteWeb.class.getName()).log(Level.SEVERE, null, ex);     
         }
 
     }
 }
+
+

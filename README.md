@@ -22,19 +22,28 @@ $ mvn package
   una vez instalado el programa debe ejecutar el programa de acuerdo al servidor que desee probar primero sera el servidor y luego el cliente
  
     servidor web    java -cp target/TallerNet-1.0-SNAPSHOT.jar  co/edu/escuelaing/arsw/tallernet/sockets/HTTPServer
-    
-    
+  
+  el siguiente paso sera hacer el request en su navegador, puede ser cualquiera y colocar la direccion local.
+ 
+   http://localhost:35000/prueba2.html
+ 
+
+   para este caso usamos el puerto 35000, esto esta configurado por defecto el codigo
 ## Modelo
-![Modelo](https://github.com/danielGomez1703/ARSW-Lab4-/blob/master/resources/Umodel.JPG)
+![Modelo](https://github.com/danielGomez1703/ARSW-Lab4-/blob/master/resources/modelo.PNG)
 
 el modelo es algo simple de primera impresion, depende del servidor y el cliente web, este servidor es un servidor concurrente para atender varios procesos o solicitudes al mismo tiempo
     
     
 # Pruebas 
   
- la siguiente imagen refleja a nivel general el funcionamiento de los socket en este caso con el servidor que atiende funciones matematicas.
+Esta evidencia es  la prueba al ejecutar una solicitud, la capacidad de crear 100 mas de acuerdo al pool establecido.
 
-![pruebaM](https://github.com/danielGomez1703/ARSW-Lab4-/blob/master/resources/pMath.JPG)
+![socket1](https://github.com/danielGomez1703/ARSW-Lab4-/blob/master/resources/evidence1.PNG)
+
+como se puede observar el limite se las solicutudes es correcto ya que su limite es 100 sockets para ese pool.
+
+![socket101](https://github.com/danielGomez1703/ARSW-Lab4-/blob/master/resources/evidence3.PNG)
 
 ## Descripion
 
@@ -49,8 +58,13 @@ posteriormente en consola se evidenciara el resultado de las operaciones
 En adicion a esto, el servidor web ahora atendera mas de un solo proceso a la vez, esto mediante el uso de hilos (Threads) Los cuales permiten abrir diferentes procesos al mismo tiempo, realizar acciones al mismo tiempo dentro de un solo servidor.
 las preubas se haran con llamados desde clientes , mediante una peticion GET.
 
+## DOCUMENTACION
+
+    la documentacion se encuentra adjunta en el repositorio 
+    [aqui encontrara la documentacion](https://github.com/danielGomez1703/ARSW-Lab4-/tree/master/site/apidocs)
+
 ## Author
-    Daniel Felipe Gomez Suarez
+    Daniel Felipe Gomez Suarez -[daniegomez1703](https://github.com/danielGomez1703)
     
 ## BUILT IN
    Proyecto construido en [Maven](https://maven.apache.org/)
